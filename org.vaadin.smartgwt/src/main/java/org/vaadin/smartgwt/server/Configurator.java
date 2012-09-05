@@ -30,7 +30,7 @@ public class Configurator extends Window {
 		this.servletContextPath = servletContextPath;
 		init();
 	}
-	
+
 	public HandlerRegistration addOKClickHandler(ClickHandler handler) {
 		return okButton.addClickHandler(handler);
 	}
@@ -118,15 +118,13 @@ public class Configurator extends Window {
 			public void onSelectionUpdated(SelectionUpdatedEvent event) {
 				ListGridRecord[] nodes = cpe.getSelectedRecords();
 
-				if (nodes.length > 0) {
+				if (nodes != null && nodes.length > 0) {
 					Double id = nodes[0].getAttributeAsDouble("id");
 					Integer iid = (int) id.doubleValue();
-					
+
 					reset.setEnabled(cpe.isOverriden(iid.toString()));
 					reset.requestRepaint();
-				}
-				else
-				{
+				} else {
 					reset.setEnabled(false);
 					reset.requestRepaint();
 				}

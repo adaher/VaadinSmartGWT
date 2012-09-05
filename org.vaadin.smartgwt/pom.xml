@@ -39,8 +39,8 @@
 						</Include-Resource>
 						<Vaadin-Package-Version>1</Vaadin-Package-Version>
 						<Vaadin-Widgetsets>org.vaadin.smartgwt.SmartGWTWidgetset</Vaadin-Widgetsets>
-						<Implementation-Title>${pom.name}</Implementation-Title>
-						<Implementation-Version>${pom.version}</Implementation-Version>
+						<Implementation-Title>${project.name}</Implementation-Title>
+						<Implementation-Version>${project.version}</Implementation-Version>
 					</instructions>
 				</configuration>
 			</plugin>
