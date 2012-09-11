@@ -1,5 +1,7 @@
 package org.vaadin.smartgwt.server.util;
 
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.codehaus.jackson.map.ObjectMapper;
@@ -17,14 +19,14 @@ public class JSONHelper {
 
 		buffer.append('[');
 
-		for (Record record : records) {
+		for (Iterator<Record> iterator = Arrays.asList(records).iterator(); iterator.hasNext();) {
+			buffer.append(objectMapper.writeValueAsString(toMap(iterator.next())));
 
-			String value = objectMapper.writeValueAsString(toMap(record));
-			buffer.append(value);
-			buffer.append(',');
+			if (iterator.hasNext()) {
+				buffer.append(',');
+			}
 		}
 
-		buffer.setLength(buffer.length() - 1);
 		buffer.append(']');
 
 		return buffer.toString();
