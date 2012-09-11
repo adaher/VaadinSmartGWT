@@ -170,7 +170,7 @@ public class Configurator extends Window {
 		});
 
 		reset.setIconSize(16);
-		reset.setIcon(servletContextPath + "/img/last_edit_pos.gif");
+		reset.setIcon(servletContextPath + "/images/last_edit_pos.gif");
 		reset.setActionType(SelectionType.BUTTON);
 		strip.setWidth100();
 		strip.addMember(reset);
